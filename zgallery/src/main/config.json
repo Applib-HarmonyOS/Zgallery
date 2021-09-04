@@ -1,0 +1,72 @@
+{
+  "app": {
+    "bundleName": "com.github.mzelzoghbi",
+    "vendor": "github",
+    "version": {
+      "code": 1000000,
+      "name": "1.0.0"
+    },
+    "apiVersion": {
+      "compatible": 5,
+      "target": 5,
+      "releaseType": "Release"
+    }
+  },
+  "deviceConfig": {
+  },
+  "module": {
+    "reqPermissions": [
+      {
+        "name": "ohos.permission.INTERNET",
+        "reason": "Internet permission"
+      }
+    ],
+    "package": "com.mzelzoghbi.zgallery",
+    "deviceType": [
+      "phone"
+    ],
+    "distro": {
+      "deliveryWithInstall": true,
+      "moduleName": "zgallery",
+      "moduleType": "har"
+    },
+    "abilities": [
+      {
+        "orientation": "unspecified",
+        "name": "com.mzelzoghbi.zgallery.activities.BaseAbility",
+        "label": "$string:app_name",
+        "type": "page",
+        "launchType": "standard"
+      },
+      {
+        "orientation": "unspecified",
+        "name": "com.mzelzoghbi.zgallery.activities.ZGalleryAbility",
+        "label": "$string:app_name",
+        "type": "page",
+        "launchType": "standard",
+        "skills":[
+          {
+            "actions":[
+              "ability.intent.GALLERY_IMAGES"
+            ]
+          }
+        ]
+      },
+      {
+        "orientation": "unspecified",
+        "name": "com.mzelzoghbi.zgallery.activities.ZGridAbility",
+        "label": "$string:app_name",
+        "type": "page",
+        "launchType": "standard",
+        "skills":[
+          {
+            "actions":[
+              "ability.intent.GRID_IMAGES"
+            ]
+          }
+        ]
+      }
+
+    ]
+  }
+}

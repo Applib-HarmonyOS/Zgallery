@@ -1,0 +1,21 @@
+<?xml version="1.0" encoding="utf-8"?>
+<DependentLayout
+    ohos:width="match_parent"
+    ohos:height="match_parent"
+    ohos:orientation="vertical"
+    xmlns:ohos="http://schemas.huawei.com/res/ohos">
+
+    <ProgressBar
+        ohos:width="40vp"
+        ohos:height="40vp"
+        ohos:center_in_parent="true" />
+
+    <com.mzelzoghbi.zgallery.SquarePhotoView
+        ohos:id="$+id:iv"
+        ohos:width="match_parent"
+        ohos:height="match_parent"
+        ohos:scale_mode="center"
+        ohos:clip_alignment="center"
+        ohos:center_in_parent="true"
+        ohos:bottom_padding="80vp" />
+</DependentLayout>
