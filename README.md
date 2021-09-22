@@ -20,11 +20,11 @@ Simply with a very nice builder you will find it done.
                 .setGridImgPlaceHolder(Color.BLACK.getValue()) // color placeholder for the grid image until it loads
                 .show();
 "><pre><span class="pl-smi">ZGrid</span><span class="pl-k">.</span>with(<span class="pl-c1">this</span>, <span class="pl-c"><span class="pl-c">/*</span>your string arraylist of image urls<span class="pl-c">*/</span></span>)
-                .setToolbarColorResId(<span class="pl-smi">R</span><span class="pl-k">.</span>color<span class="pl-k">.</span>colorPrimary) <span class="pl-c"><span class="pl-c">//</span> toolbar color</span>
+                .setToolbarColorResId(<span class="pl-smi">Color</span><span class="pl-k">.</span>BLACK<span class="pl-k">.</span>getValue()) <span class="pl-c"><span class="pl-c">//</span> toolbar color</span>
                 .setTitle(<span class="pl-s"><span class="pl-pds">"</span>Zak Gallery<span class="pl-pds">"</span></span>) <span class="pl-c"><span class="pl-c">//</span> toolbar title</span>
-                .setToolbarTitleColor(<span class="pl-smi">ZColor</span><span class="pl-c1"><span class="pl-k">.</span>WHITE</span>) <span class="pl-c"><span class="pl-c">//</span> toolbar title color</span>
+                .setToolbarTitleColor(<span class="pl-smi">Color</span><span class="pl-c1"><span class="pl-k">.</span>WHITE.getValue()</span>) <span class="pl-c"><span class="pl-c">//</span> toolbar title color</span>
                 .setSpanCount(<span class="pl-c1">3</span>) <span class="pl-c"><span class="pl-c">//</span> colums count</span>
-                .setGridImgPlaceHolder(<span class="pl-smi">R</span><span class="pl-k">.</span>color<span class="pl-k">.</span>colorPrimary) <span class="pl-c"><span class="pl-c">//</span> color placeholder for the grid image until it loads</span>
+                .setGridImgPlaceHolder(<span class="pl-smi">COLOR</span><span class="pl-k">.</span>WHITE<span class="pl-k">.</span>getValue()) <span class="pl-c"><span class="pl-c">//</span> color placeholder for the grid image until it loads</span>
                 .show();</pre></div>
 <h3><a id="user-content-gallery-builder" class="anchor" aria-hidden="true" href="#gallery-builder"><svg class="octicon octicon-link" viewBox="0 0 16 16" version="1.1" width="16" height="16" aria-hidden="true"><path fill-rule="evenodd" d="M7.775 3.275a.75.75 0 001.06 1.06l1.25-1.25a2 2 0 112.83 2.83l-2.5 2.5a2 2 0 01-2.83 0 .75.75 0 00-1.06 1.06 3.5 3.5 0 004.95 0l2.5-2.5a3.5 3.5 0 00-4.95-4.95l-1.25 1.25zm-4.69 9.64a2 2 0 010-2.83l2.5-2.5a2 2 0 012.83 0 .75.75 0 001.06-1.06 3.5 3.5 0 00-4.95 0l-2.5 2.5a3.5 3.5 0 004.95 4.95l1.25-1.25a.75.75 0 00-1.06-1.06l-1.25 1.25a2 2 0 01-2.83 0z"></path></svg></a>Gallery Builder</h3>
 <div class="highlight highlight-source-java position-relative" data-snippet-clipboard-copy-content="ZGallery.with(this, /*your string arraylist of image urls*/)
@@ -34,9 +34,9 @@ Simply with a very nice builder you will find it done.
                 .setTitle(&quot;ZGallery&quot;) // toolbar title
                 .show();
 "><pre><span class="pl-smi">ZGallery</span><span class="pl-k">.</span>with(<span class="pl-c1">this</span>, <span class="pl-c"><span class="pl-c">/*</span>your string arraylist of image urls<span class="pl-c">*/</span></span>)
-                .setToolbarTitleColor(<span class="pl-smi">ZColor</span><span class="pl-c1"><span class="pl-k">.</span>WHITE</span>) <span class="pl-c"><span class="pl-c">//</span> toolbar title color</span>
-                .setGalleryBackgroundColor(<span class="pl-smi">ZColor</span><span class="pl-c1"><span class="pl-k">.</span>WHITE</span>) <span class="pl-c"><span class="pl-c">//</span> activity background color</span>
-                .setToolbarColorResId(<span class="pl-smi">R</span><span class="pl-k">.</span>color<span class="pl-k">.</span>colorPrimary) <span class="pl-c"><span class="pl-c">//</span> toolbar color</span>
+                .setToolbarTitleColor(<span class="pl-smi">Color</span><span class="pl-c1"><span class="pl-k">.</span>WHITE.getValue()</span>) <span class="pl-c"><span class="pl-c">//</span> toolbar title color</span>
+                .setGalleryBackgroundColor(<span class="pl-smi">Color</span><span class="pl-c1"><span class="pl-k">.</span>WHITE.getValue()</span>) <span class="pl-c"><span class="pl-c">//</span> activity background color</span>
+                .setToolbarColorResId(<span class="pl-smi">COLOR</span><span class="pl-k">.</span>BLACK<span class="pl-k">.</span>getValue()) <span class="pl-c"><span class="pl-c">//</span> toolbar color</span>
                 .setTitle(<span class="pl-s"><span class="pl-pds">"</span>Zak Gallery<span class="pl-pds">"</span></span>) <span class="pl-c"><span class="pl-c">//</span> toolbar title</span>
                 .show();</pre></div>
 
