@@ -13,11 +13,11 @@ For displaying images in a PageSlider with a nice scroll HorizontalList and nice
 Simply with a very nice builder you will find it done.
 
 <div class="highlight highlight-source-java position-relative" data-snippet-clipboard-copy-content="ZGrid.with(this, /*your string arraylist of image urls*/)
-                .setToolbarColorResId(R.color.colorPrimary) // toolbar color
+                .setToolbarColorResId(Color.BLACK.getValue()) // toolbar color
                 .setTitle(&quot;ZGallery&quot;) // toolbar title
-                .setToolbarTitleColor(ZColor.WHITE) // toolbar title color
+                .setToolbarTitleColor(Color.WHITE.getvalue()) // toolbar title color
                 .setSpanCount(3) // colums count
-                .setGridImgPlaceHolder(R.color.colorPrimary) // color placeholder for the grid image until it loads
+                .setGridImgPlaceHolder(Color.BLACK.getValue()) // color placeholder for the grid image until it loads
                 .show();
 "><pre><span class="pl-smi">ZGrid</span><span class="pl-k">.</span>with(<span class="pl-c1">this</span>, <span class="pl-c"><span class="pl-c">/*</span>your string arraylist of image urls<span class="pl-c">*/</span></span>)
                 .setToolbarColorResId(<span class="pl-smi">R</span><span class="pl-k">.</span>color<span class="pl-k">.</span>colorPrimary) <span class="pl-c"><span class="pl-c">//</span> toolbar color</span>
@@ -28,9 +28,9 @@ Simply with a very nice builder you will find it done.
                 .show();</pre></div>
 <h3><a id="user-content-gallery-builder" class="anchor" aria-hidden="true" href="#gallery-builder"><svg class="octicon octicon-link" viewBox="0 0 16 16" version="1.1" width="16" height="16" aria-hidden="true"><path fill-rule="evenodd" d="M7.775 3.275a.75.75 0 001.06 1.06l1.25-1.25a2 2 0 112.83 2.83l-2.5 2.5a2 2 0 01-2.83 0 .75.75 0 00-1.06 1.06 3.5 3.5 0 004.95 0l2.5-2.5a3.5 3.5 0 00-4.95-4.95l-1.25 1.25zm-4.69 9.64a2 2 0 010-2.83l2.5-2.5a2 2 0 012.83 0 .75.75 0 001.06-1.06 3.5 3.5 0 00-4.95 0l-2.5 2.5a3.5 3.5 0 004.95 4.95l1.25-1.25a.75.75 0 00-1.06-1.06l-1.25 1.25a2 2 0 01-2.83 0z"></path></svg></a>Gallery Builder</h3>
 <div class="highlight highlight-source-java position-relative" data-snippet-clipboard-copy-content="ZGallery.with(this, /*your string arraylist of image urls*/)
-                .setToolbarTitleColor(ZColor.WHITE) // toolbar title color
-                .setGalleryBackgroundColor(ZColor.WHITE) // activity background color
-                .setToolbarColorResId(R.color.colorPrimary) // toolbar color
+                .setToolbarTitleColor(Color.WHITE.getValue()) // toolbar title color
+                .setGalleryBackgroundColor(Color.WHITE.getValue()) // activity background color
+                .setToolbarColorResId(Color.BLACK.getValue()) // toolbar color
                 .setTitle(&quot;ZGallery&quot;) // toolbar title
                 .show();
 "><pre><span class="pl-smi">ZGallery</span><span class="pl-k">.</span>with(<span class="pl-c1">this</span>, <span class="pl-c"><span class="pl-c">/*</span>your string arraylist of image urls<span class="pl-c">*/</span></span>)
