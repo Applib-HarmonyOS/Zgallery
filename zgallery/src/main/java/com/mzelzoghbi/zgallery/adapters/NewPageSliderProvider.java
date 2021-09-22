@@ -12,8 +12,7 @@ import java.util.ArrayList;
 public class NewPageSliderProvider extends PageSliderProvider {
 
     Ability ability;
-     ArrayList<String> images;
-    private final boolean isShowing = true;
+    ArrayList<String> images;
 
     public  NewPageSliderProvider(Ability ability, ArrayList<String> images, ListContainer imagesHorizontalList) {
         this.ability = ability;

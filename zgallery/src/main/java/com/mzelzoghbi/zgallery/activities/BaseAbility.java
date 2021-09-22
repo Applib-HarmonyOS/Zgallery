@@ -1,7 +1,6 @@
 package com.mzelzoghbi.zgallery.activities;
 
 import com.mzelzoghbi.zgallery.Constants;
-import com.mzelzoghbi.zgallery.entities.ZColor;
 import ohos.aafwk.ability.Ability;
 import ohos.aafwk.content.Intent;
 import ohos.hiviewdfx.HiLog;

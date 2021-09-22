@@ -3,7 +3,6 @@ package com.mzelzoghbi.sample.slice;
 import com.mzelzoghbi.sample.ResourceTable;
 import com.mzelzoghbi.zgallery.ZGallery;
 import com.mzelzoghbi.zgallery.ZGrid;
-import com.mzelzoghbi.zgallery.entities.ZColor;
 import ohos.aafwk.ability.AbilitySlice;
 import ohos.aafwk.content.Intent;
 import ohos.agp.components.Button;
@@ -20,13 +19,12 @@ public class MainAbilitySlice extends AbilitySlice {
         Button zgridButton = (Button) findComponentById(ResourceTable.Id_zgrid_button);
         Button zgalleryButton = (Button) findComponentById(ResourceTable.Id_zgallery_button);
 
-        zgalleryButton.setClickedListener(component -> {
-            galleryActivity();
-        });
+        zgalleryButton.setClickedListener(component ->
+                galleryActivity()
+        );
 
-        zgridButton.setClickedListener(component -> {
-                    gridActivity();
-                }
+        zgridButton.setClickedListener(component ->
+                gridActivity()
         );
     }
 
@@ -34,7 +32,7 @@ public class MainAbilitySlice extends AbilitySlice {
         ZGrid.with(this.getAbility(), getDummyImageList())
                 .setToolbarColorResId(Color.BLACK.getValue())
                 .setTitle("ZGallery")
-                .setToolbarTitleColor(ZColor.WHITE.ordinal())
+                .setToolbarTitleColor(Color.WHITE.getValue())
                 .setSpanCount(3)
                 .setGridImgPlaceHolder(Color.BLACK.getValue())
                 .show();
@@ -43,8 +41,8 @@ public class MainAbilitySlice extends AbilitySlice {
 
     public void galleryActivity() {
         ZGallery.with(this.getAbility(), getDummyImageList())
-                .setToolbarTitleColor(ZColor.WHITE.ordinal())
-                .setGalleryBackgroundColor(ZColor.WHITE.ordinal())
+                .setToolbarTitleColor(Color.WHITE.getValue())
+                .setGalleryBackgroundColor(Color.WHITE.getValue())
                 .setToolbarColorResId(Color.BLACK.getValue())
                 .setTitle("ZGallery")
                 .show();

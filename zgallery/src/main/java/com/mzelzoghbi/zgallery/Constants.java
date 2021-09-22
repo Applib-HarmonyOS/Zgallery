@@ -5,9 +5,16 @@ import ohos.hiviewdfx.HiLogLabel;
 
 public final class Constants {
 
+    private Constants() {
+    }
+
     public static final HiLogLabel LABEL = new HiLogLabel(HiLog.LOG_APP, 0x00201, "MY_TAG");
 
-    public class IntentPassingParams {
+    public static class IntentPassingParams {
+
+        private IntentPassingParams() {
+        }
+
         public static final String IMAGES = "images";
         public static final String COUNT = "count";
         public static final String TOOLBAR_COLOR_ID = "toolbarColorId";

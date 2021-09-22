@@ -6,12 +6,14 @@ import com.mzelzoghbi.zgallery.OnImgClick;
 import com.mzelzoghbi.zgallery.ResourceTable;
 import com.mzelzoghbi.zgallery.adapters.HorizontalItemProvider;
 import com.mzelzoghbi.zgallery.adapters.NewPageSliderProvider;
-import com.mzelzoghbi.zgallery.entities.ZColor;
 import ohos.aafwk.content.Intent;
+import ohos.agp.colors.RgbColor;
 import ohos.agp.components.Component;
 import ohos.agp.components.DependentLayout;
 import ohos.agp.components.ListContainer;
 import ohos.agp.components.PageSlider;
+import ohos.agp.components.element.ShapeElement;
+import ohos.agp.utils.Color;
 import ohos.hiviewdfx.HiLog;
 
 public class ZGalleryAbility extends BaseAbility {
@@ -37,10 +39,11 @@ public class ZGalleryAbility extends BaseAbility {
         // get intent data
         int currentPos = intent.getIntParam(Constants.IntentPassingParams.SELECTED_IMG_POS, 0);
         int bgColorId =  intent.getIntParam(Constants.IntentPassingParams.BG_COLOR,0);
-        ZColor bgColor = ZColor.values()[bgColorId];
-//        if (bgColor == ZColor.WHITE) {
-//            mainLayout.setBackground(Color.WHITE);
-//        }
+
+        ShapeElement backgroundShape = new ShapeElement();
+        backgroundShape.setShape(ShapeElement.RECTANGLE);
+        backgroundShape.setRgbColor(RgbColor.fromArgbInt(bgColorId));
+        mainLayout.setBackground(backgroundShape);
 
         // pager adapter
         HiLog.debug(Constants.LABEL,"in zgallery activity");
@@ -63,14 +66,12 @@ public class ZGalleryAbility extends BaseAbility {
         mViewPager.addPageChangedListener(new PageSlider.PageChangedListener() {
             @Override
             public void onPageSliding(int i, float v, int i1) {
-
+                //Not used
             }
 
             @Override
             public void onPageSlideStateChanged(int i) {
-//                HiLog.debug(Constants.LABEL,"page slider in zgallery activity set to "+i);
-//                horizontalItemProvider.setSelectedItem(i);
-//                imagesHorizontalList.scrollTo(i);
+                //Not used
             }
 
             @Override

@@ -72,12 +72,9 @@ public class GridItemProvider extends BaseItemProvider {
                 dlItemParent.setLayoutConfig(new DirectionalLayout.LayoutConfig(0, DirectionalLayout.LayoutConfig.MATCH_CONTENT, LayoutAlignment.TOP, 1));
                 Component childConvertComponent = LayoutScatter.getInstance(mAbility).parse(ResourceTable.Layout_z_item_image, null, false);
                 int finalI = i;
-                childConvertComponent.setClickedListener(new Component.ClickedListener() {
-                    @Override
-                    public void onClick(Component component) {
-                        if (clickListener != null) {
-                            clickListener.onClick(finalI);
-                        }
+                childConvertComponent.setClickedListener(component -> {
+                    if (clickListener != null) {
+                        clickListener.onClick(finalI);
                     }
                 });
                 dlItemParent.addComponent(childConvertComponent);
@@ -91,7 +88,6 @@ public class GridItemProvider extends BaseItemProvider {
                         .centerCrop()
                         .placeholder(imgPlaceHolderResId != -1 ? imgPlaceHolderResId : ResourceTable.Graphic_progress)
                         .into(viewHolder.image);
-                //.placeholder(imgPlaceHolderResId != -1 ? imgPlaceHolderResId : ResourceTable.Media_placeholder)
             } else {
                 DirectionalLayout childConvertComponent = new DirectionalLayout(mAbility);
                 childConvertComponent.setLayoutConfig(new DirectionalLayout.LayoutConfig(0, DirectionalLayout.LayoutConfig.MATCH_CONTENT, LayoutAlignment.TOP, 1));
@@ -101,18 +97,10 @@ public class GridItemProvider extends BaseItemProvider {
         return convertComponent;
     }
 
-//    public static class ImageHolder {
-//        Image image;
-//
-//        ImageHolder(Component component) {
-//            image = (Image) component.findComponentById(ResourceTable.Id_imageView);
-//        }
-//    }
-
     protected static class ViewHolder {
         HashMap<Integer, Component> mViews = new HashMap<>();
-        public Component itemView;
-        public Image image;
+        Component itemView;
+        Image image;
 
         ViewHolder(Component component) {
             this.itemView = component;

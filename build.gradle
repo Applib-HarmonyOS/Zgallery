@@ -1,5 +1,8 @@
 // Top-level build file where you can add configuration options common to all sub-projects/modules.
 apply plugin: 'com.huawei.ohos.app'
+apply plugin: 'checkstyle'
+apply plugin: "org.sonarqube"
+
 
 ohos {
     compileSdkVersion 5
@@ -21,6 +24,7 @@ buildscript {
     dependencies {
         classpath 'com.huawei.ohos:hap:2.4.2.7'
         classpath 'com.huawei.ohos:decctest:1.0.0.7'
+        classpath "org.sonarsource.scanner.gradle:sonarqube-gradle-plugin:3.3"
     }
 }
 
@@ -34,5 +38,16 @@ allprojects {
         }
         mavenCentral()
         jcenter()
+    }
+
+    sonarqube {
+        properties {
+            property "sonar.projectKey", "ZGallery"
+            property "sonar.host.url", "http://localhost:9000"
+            property "sonar.login","bd76f1bebaaa8c081468563e7364a2186113a622"
+            property "sonar.sources", "../entry/src, ../zgallery/src"
+            property "sonar.java.binaries", "../entry/build,../zgallery/build"
+            property "sonar.java.checkstyle.reportPaths", "../entry/build/reports/checkstyle/checkstyle.xml"
+        }
     }
 }

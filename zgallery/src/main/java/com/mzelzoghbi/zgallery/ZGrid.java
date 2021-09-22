@@ -1,15 +1,17 @@
 package com.mzelzoghbi.zgallery;
 
 import ohos.aafwk.ability.Ability;
-import java.util.ArrayList;
-import com.mzelzoghbi.zgallery.entities.ZColor;
+
+import java.io.Serializable;
+import java.util.List;
+
 import ohos.aafwk.content.Intent;
 import ohos.aafwk.content.Operation;
 import ohos.hiviewdfx.HiLog;
 
 public class ZGrid {
     private Ability ability;
-    private ArrayList<String> imagesURLs;
+    private List<String> imagesURLs;
     private String title;
     private int spanCount = 2;
     private int toolbarColor = -1;
@@ -23,12 +25,12 @@ public class ZGrid {
      * @param ability   Reference from current activity
      * @param imagesURLs Image URLs to be displayed
      */
-    public static ZGrid with(Ability ability, ArrayList<String> imagesURLs) {
+    public static ZGrid with(Ability ability, List<String> imagesURLs) {
         return new ZGrid(ability, imagesURLs);
     }
 
 
-    private ZGrid(Ability ability, ArrayList<String> imagesURLs) {
+    private ZGrid(Ability ability, List<String> imagesURLs) {
         this.imagesURLs = imagesURLs;
         this.ability = ability;
     }
@@ -96,7 +98,7 @@ public class ZGrid {
                 .withAction("ability.intent.GRID_IMAGES")
                 .build();
         gridIntent.setOperation(systemOperation);
-        gridIntent.setStringArrayListParam(Constants.IntentPassingParams.IMAGES, imagesURLs);
+        gridIntent.setParam(Constants.IntentPassingParams.IMAGES, (Serializable) imagesURLs);
         gridIntent.setParam(Constants.IntentPassingParams.COUNT, spanCount);
         gridIntent.setParam(Constants.IntentPassingParams.TITLE, title);
         gridIntent.setParam(Constants.IntentPassingParams.TOOLBAR_COLOR_ID, toolbarColor);

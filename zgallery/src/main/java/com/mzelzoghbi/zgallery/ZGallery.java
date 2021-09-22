@@ -1,31 +1,32 @@
 package com.mzelzoghbi.zgallery;
 
-import com.mzelzoghbi.zgallery.entities.ZColor;
 import ohos.aafwk.ability.Ability;
 import ohos.aafwk.content.Intent;
 import ohos.aafwk.content.Operation;
 import ohos.hiviewdfx.HiLog;
 
+import java.io.Serializable;
 import java.util.ArrayList;
+import java.util.List;
 
 public class ZGallery {
     private Ability mAbility;
-    private ArrayList<String> imagesURLs;
+    private List<String> imagesURLs;
     private String title;
     private int toolbarColor = -1;
-    private int color;
+    private int color = -1;
     private int selectedImgPosition;
-    private int backgroundColor;
+    private int backgroundColor = -1;
 
     private ZGallery() {
     }
 
-    public static ZGallery with(Ability ability, ArrayList<String> imagesURLs) {
+    public static ZGallery with(Ability ability, List<String> imagesURLs) {
         return new ZGallery(ability, imagesURLs);
     }
 
 
-    private ZGallery(Ability ability, ArrayList<String> imagesURLs) {
+    private ZGallery(Ability ability, List<String> imagesURLs) {
         this.imagesURLs = imagesURLs;
         this.mAbility = ability;
     }
@@ -90,7 +91,7 @@ public class ZGallery {
                 .withAction("ability.intent.GALLERY_IMAGES")
                 .build();
         galleryIntent.setOperation(systemOperation);
-        galleryIntent.setParam(Constants.IntentPassingParams.IMAGES, imagesURLs);
+        galleryIntent.setParam(Constants.IntentPassingParams.IMAGES, (Serializable) imagesURLs);
         galleryIntent.setParam(Constants.IntentPassingParams.TITLE, title);
         galleryIntent.setParam(Constants.IntentPassingParams.TOOLBAR_COLOR_ID, toolbarColor);
         galleryIntent.setParam(Constants.IntentPassingParams.TOOLBAR_TITLE_COLOR, color);

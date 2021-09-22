@@ -58,17 +58,16 @@ public class HorizontalItemProvider extends BaseItemProvider {
         imageHolder.image.setClickedListener(component -> {
             imgClick.onClick(i);
         });
-        HiLog.debug(Constants.LABEL, "Set image " + i + " selected image");
         Glide.with(ability)
                 .load(imageUrl)
                 .placeholder(ResourceTable.Graphic_progress)
                 .centerCrop()
                 .into(imageHolder.image);
         if (selectedItem != i) {
-            HiLog.debug(Constants.LABEL, "Set image " + i + " selected image " + selectedItem + "not equal");
+            HiLog.debug(Constants.LABEL, "image " + i + " " + selectedItem + "not equal");
             imageHolder.image.setAlpha(0.3f);
         } else {
-            HiLog.debug(Constants.LABEL, "Set image " + i + " selected image " + selectedItem + " equal");
+            HiLog.debug(Constants.LABEL, "image " + i + " " + selectedItem + " equal");
             imageHolder.image.setAlpha(1f);
         }
         return cpt;
