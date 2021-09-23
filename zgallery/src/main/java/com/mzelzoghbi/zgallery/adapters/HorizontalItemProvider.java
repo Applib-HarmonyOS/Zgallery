@@ -65,7 +65,7 @@ public class HorizontalItemProvider extends BaseItemProvider {
                 .into(imageHolder.image);
         if (selectedItem != i) {
             HiLog.debug(Constants.LABEL, "image " + i + " " + selectedItem + "not equal");
-            imageHolder.image.setAlpha(0.3f);
+            imageHolder.image.setAlpha(0.5f);
         } else {
             HiLog.debug(Constants.LABEL, "image " + i + " " + selectedItem + " equal");
             imageHolder.image.setAlpha(1f);

@@ -22,7 +22,7 @@ buildscript {
         jcenter()
     }
     dependencies {
-        classpath 'com.huawei.ohos:hap:2.4.2.7'
+        classpath 'com.huawei.ohos:hap:2.4.4.2'
         classpath 'com.huawei.ohos:decctest:1.0.0.7'
         classpath "org.sonarsource.scanner.gradle:sonarqube-gradle-plugin:3.3"
     }
@@ -44,7 +44,7 @@ allprojects {
         properties {
             property "sonar.projectKey", "ZGallery"
             property "sonar.host.url", "http://localhost:9000"
-            property "sonar.login","bd76f1bebaaa8c081468563e7364a2186113a622"
+            property "sonar.login", "bd76f1bebaaa8c081468563e7364a2186113a622"
             property "sonar.sources", "../entry/src, ../zgallery/src"
             property "sonar.java.binaries", "../entry/build,../zgallery/build"
             property "sonar.java.checkstyle.reportPaths", "../entry/build/reports/checkstyle/checkstyle.xml"

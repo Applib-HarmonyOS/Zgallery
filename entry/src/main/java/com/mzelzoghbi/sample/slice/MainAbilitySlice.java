@@ -42,7 +42,7 @@ public class MainAbilitySlice extends AbilitySlice {
     public void galleryActivity() {
         ZGallery.with(this.getAbility(), getDummyImageList())
                 .setToolbarTitleColor(Color.WHITE.getValue())
-                .setGalleryBackgroundColor(Color.WHITE.getValue())
+                .setGalleryBackgroundColor(Color.BLACK.getValue())
                 .setToolbarColorResId(Color.BLACK.getValue())
                 .setTitle("ZGallery")
                 .show();

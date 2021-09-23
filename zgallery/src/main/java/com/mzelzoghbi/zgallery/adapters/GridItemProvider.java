@@ -58,9 +58,9 @@ public class GridItemProvider extends BaseItemProvider {
     }
 
     @Override
-    public Component getComponent(int position, Component convertComponent, ComponentContainer componentContainer) {
+    public Component getComponent(int position, Component comp, ComponentContainer componentContainer) {
         ViewHolder viewHolder;
-        convertComponent = new DirectionalLayout(mAbility);
+        Component convertComponent = new DirectionalLayout(mAbility);
         ((DirectionalLayout) convertComponent).setOrientation(Component.HORIZONTAL);
         ComponentContainer.LayoutConfig layoutConfig = convertComponent.getLayoutConfig();
         layoutConfig.width = DependentLayout.LayoutConfig.MATCH_PARENT;

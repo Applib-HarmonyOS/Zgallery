@@ -1,6 +1,6 @@
 {
   "app": {
-    "bundleName": "com.github.mzelzoghbi",
+    "bundleName": "com.mzelzoghbi.sample",
     "vendor": "github",
     "version": {
       "code": 1000000,
@@ -23,7 +23,8 @@
     ],
     "package": "com.mzelzoghbi.zgallery",
     "deviceType": [
-      "phone"
+      "phone",
+      "tablet"
     ],
     "distro": {
       "deliveryWithInstall": true,
