@@ -40,14 +40,31 @@ allprojects {
         jcenter()
     }
 
-    sonarqube {
-        properties {
-            property "sonar.projectKey", "ZGallery"
-            property "sonar.host.url", "http://localhost:9000"
-            property "sonar.login", "bd76f1bebaaa8c081468563e7364a2186113a622"
-            property "sonar.sources", "../entry/src, ../zgallery/src"
-            property "sonar.java.binaries", "../entry/build,../zgallery/build"
-            property "sonar.java.checkstyle.reportPaths", "../entry/build/reports/checkstyle/checkstyle.xml"
-        }
+    task checkstyle(type: Checkstyle) {
+        showViolations = true
+        configFile file("config/checkstyle.xml")
+
+        source 'entry/src/main/java'
+        source 'zgallery/src/main/java'
+        include '**/*.java'
+
+        // empty classpath
+        classpath = files()
     }
 }
+checkstyle {
+    toolVersion "8.43"
+}
+
+sonarqube {
+    properties {
+        property "sonar.projectKey", "ZGallery"
+        property "sonar.organization", "applibgroup"
+        property "sonar.host.url", "http://localhost:9000"
+        property "sonar.login", "bd76f1bebaaa8c081468563e7364a2186113a622"
+        property "sonar.sources", "entry/src, zgallery/src"
+        property "sonar.java.binaries", "entry/build,zgallery/build"
+        property "sonar.java.checkstyle.reportPaths", "build/reports/checkstyle/checkstyle.xml"
+    }
+}
+
