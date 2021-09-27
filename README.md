@@ -3,7 +3,7 @@ HMOS 3rd party library to make implementing galleries more easier.  (In Progress
 
 It includes two abilities :
 
-  a. For displaying a list of images in GridLayout.
+  a. For displaying a list of images in GridLayout.<br/>
   b. For displaying images in a PageSlider with a nice scroll HorizontalList and nice zooming gestures.
 
 <h2>How it works</h2>
