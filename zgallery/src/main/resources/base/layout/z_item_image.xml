@@ -1,0 +1,13 @@
+<?xml version="1.0" encoding="utf-8"?>
+<DependentLayout xmlns:ohos="http://schemas.huawei.com/res/ohos"
+    ohos:width="match_parent"
+    ohos:clickable="true"
+    ohos:height="match_content">
+
+    <Image
+        ohos:id="$+id:imageView"
+        ohos:width="match_parent"
+        ohos:height="200vp"
+        ohos:margin="1vp"
+        />
+</DependentLayout>

@@ -1,0 +1,9 @@
+<?xml version="1.0" encoding="utf-8"?>
+<ToolBar
+    xmlns:ohos="http://schemas.huawei.com/res/ohos"
+    xmlns:app="http://schemas.ohos.com/apk/res-auto"
+    ohos:id="$+id:toolbar"
+    style="@style/AppTheme.Toolbar"
+    ohos:height="match_parent"
+    ohos:width="match_content"
+    app:layout_scrollFlags="scroll|enterAlways" />
