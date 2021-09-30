@@ -55,9 +55,9 @@ public class HorizontalItemProvider extends BaseItemProvider {
             imageHolder = (ImageHolder) cpt.getTag();
         }
         String imageUrl = images.get(i);
-        imageHolder.image.setClickedListener(component -> {
-            imgClick.onClick(i);
-        });
+        imageHolder.image.setClickedListener(component ->
+            imgClick.onClick(i)
+        );
         Glide.with(ability)
                 .load(imageUrl)
                 .placeholder(ResourceTable.Graphic_progress)

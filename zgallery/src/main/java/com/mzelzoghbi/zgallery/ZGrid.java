@@ -105,6 +105,5 @@ public class ZGrid {
         gridIntent.setParam(Constants.IntentPassingParams.IMG_PLACEHOLDER, imgPlaceHolderResId);
         gridIntent.setParam(Constants.IntentPassingParams.TOOLBAR_TITLE_COLOR, color);
         ability.startAbility(gridIntent);
-        ;
     }
 }
