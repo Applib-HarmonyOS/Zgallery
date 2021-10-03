@@ -7,9 +7,11 @@ import ohos.aafwk.ability.AbilitySlice;
 import ohos.aafwk.content.Intent;
 import ohos.agp.components.Button;
 import ohos.agp.utils.Color;
-
 import java.util.ArrayList;
 
+/**
+ * MainAbilitySlice - display 2 buttons, for ZGallery and ZGrid
+ */
 public class MainAbilitySlice extends AbilitySlice {
     @Override
     public void onStart(Intent intent) {
@@ -28,6 +30,9 @@ public class MainAbilitySlice extends AbilitySlice {
         );
     }
 
+    /**
+     * ButtonClick function for ZGrid
+     */
     public void gridActivity() {
         ZGrid.with(this.getAbility(), getDummyImageList())
                 .setToolbarColorResId(Color.BLACK.getValue())
@@ -38,7 +43,9 @@ public class MainAbilitySlice extends AbilitySlice {
                 .show();
     }
 
-
+    /**
+     * ButtonClick function for ZGallery
+     */
     public void galleryActivity() {
         ZGallery.with(this.getAbility(), getDummyImageList())
                 .setToolbarTitleColor(Color.WHITE.getValue())
@@ -48,6 +55,9 @@ public class MainAbilitySlice extends AbilitySlice {
                 .show();
     }
 
+    /**
+     * Adding dummy images which are to be displayed
+     */
     private ArrayList<String> getDummyImageList() {
         ArrayList<String> imagesList = new ArrayList<>();
         imagesList.add("https://images.unsplash.com/photo-1606787366850-de6330128bfc?ixid=MnwxMjA3fDF8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&ixlib=rb-1.2.1&auto=format&fit=crop&w=750&q=80");

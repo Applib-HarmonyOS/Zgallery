@@ -5,7 +5,9 @@ import ohos.agp.components.AttrSet;
 import ohos.agp.components.PageSlider;
 import ohos.app.Context;
 
-//doubt here , i replaced viewpager with pageslider
+/**
+ * CustomViewPager for ZGallery
+ */
 public class CustomViewPager extends PageSlider {
     public CustomViewPager(Context context) {
         super(context);

@@ -1,8 +1,8 @@
 package com.mzelzoghbi.zgallery.adapters.listeners;
 
 /**
- * GridClickListener
+ * ImageClick Interface
  */
-public interface GridClickListener {
+public interface OnImgClick {
     void onClick(int pos);
 }

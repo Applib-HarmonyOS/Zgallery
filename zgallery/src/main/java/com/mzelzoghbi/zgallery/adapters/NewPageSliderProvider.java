@@ -1,5 +1,6 @@
 package com.mzelzoghbi.zgallery.adapters;
 
+
 import com.bumptech.glide.Glide;
 import com.bumptech.glide.load.engine.DiskCacheStrategy;
 import com.mzelzoghbi.zgallery.ResourceTable;
@@ -9,6 +10,9 @@ import ohos.agp.components.*;
 
 import java.util.ArrayList;
 
+/**
+ * NewPageSliderProvider
+ */
 public class NewPageSliderProvider extends PageSliderProvider {
 
     Ability ability;

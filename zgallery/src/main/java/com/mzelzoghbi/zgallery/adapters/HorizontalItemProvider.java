@@ -1,15 +1,18 @@
 package com.mzelzoghbi.zgallery.adapters;
 
+
 import com.bumptech.glide.Glide;
 import com.mzelzoghbi.zgallery.Constants;
-import com.mzelzoghbi.zgallery.OnImgClick;
+import com.mzelzoghbi.zgallery.adapters.listeners.OnImgClick;
 import com.mzelzoghbi.zgallery.ResourceTable;
 import ohos.aafwk.ability.Ability;
 import ohos.agp.components.*;
 import ohos.hiviewdfx.HiLog;
-
 import java.util.ArrayList;
 
+/**
+ * HorizontalItemProvider
+ */
 public class HorizontalItemProvider extends BaseItemProvider {
 
     ArrayList<String> images;
@@ -56,7 +59,7 @@ public class HorizontalItemProvider extends BaseItemProvider {
         }
         String imageUrl = images.get(i);
         imageHolder.image.setClickedListener(component ->
-            imgClick.onClick(i)
+                imgClick.onClick(i)
         );
         Glide.with(ability)
                 .load(imageUrl)
@@ -73,11 +76,17 @@ public class HorizontalItemProvider extends BaseItemProvider {
         return cpt;
     }
 
+    /**
+     * Setting selected item to the imageview
+     */
     public void setSelectedItem(int currentPos) {
         selectedItem = currentPos;
         notifyDataChanged();
     }
 
+    /**
+     * ImageViewHolder
+     */
     public static class ImageHolder {
         Image image;
 

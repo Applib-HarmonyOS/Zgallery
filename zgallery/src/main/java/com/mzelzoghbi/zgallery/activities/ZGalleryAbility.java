@@ -1,8 +1,8 @@
 package com.mzelzoghbi.zgallery.activities;
 
+
 import com.mzelzoghbi.zgallery.Constants;
 import com.mzelzoghbi.zgallery.CustomViewPager;
-import com.mzelzoghbi.zgallery.OnImgClick;
 import com.mzelzoghbi.zgallery.ResourceTable;
 import com.mzelzoghbi.zgallery.adapters.HorizontalItemProvider;
 import com.mzelzoghbi.zgallery.adapters.NewPageSliderProvider;
@@ -13,9 +13,11 @@ import ohos.agp.components.DependentLayout;
 import ohos.agp.components.ListContainer;
 import ohos.agp.components.PageSlider;
 import ohos.agp.components.element.ShapeElement;
-import ohos.agp.utils.Color;
 import ohos.hiviewdfx.HiLog;
 
+/**
+ * ZGalleryAbility
+ */
 public class ZGalleryAbility extends BaseAbility {
 
     CustomViewPager mViewPager;
@@ -32,13 +34,13 @@ public class ZGalleryAbility extends BaseAbility {
     @Override
     protected void afterInflation(Intent intent) {
         // init layouts
-        DependentLayout mainLayout = (DependentLayout) findComponentById(ResourceTable.Id_mainLayout);
         mViewPager = (CustomViewPager) findComponentById(ResourceTable.Id_pager);
         imagesHorizontalList = (ListContainer) findComponentById(ResourceTable.Id_imagesHorizontalList);
+        DependentLayout mainLayout = (DependentLayout) findComponentById(ResourceTable.Id_mainLayout);
 
         // get intent data
         int currentPos = intent.getIntParam(Constants.IntentPassingParams.SELECTED_IMG_POS, 0);
-        int bgColorId =  intent.getIntParam(Constants.IntentPassingParams.BG_COLOR,0);
+        int bgColorId = intent.getIntParam(Constants.IntentPassingParams.BG_COLOR, 0);
 
         ShapeElement backgroundShape = new ShapeElement();
         backgroundShape.setShape(ShapeElement.RECTANGLE);
@@ -51,13 +53,10 @@ public class ZGalleryAbility extends BaseAbility {
         adapter = new NewPageSliderProvider(this, imageURLs, imagesHorizontalList);
         mViewPager.setProvider(adapter);
         // horizontal list adapter
-        horizontalItemProvider = new HorizontalItemProvider(this, imageURLs, new OnImgClick() {
-            @Override
-            public void onClick(int pos) {
-                HiLog.debug(Constants.LABEL,"in zgallery activity set to "+pos);
-                mViewPager.setCurrentPage(pos, false);
-                horizontalItemProvider.notifyDataChanged();
-            }
+        horizontalItemProvider = new HorizontalItemProvider(this, imageURLs, pos -> {
+            HiLog.debug(Constants.LABEL,"in zgallery activity set to " + pos);
+            mViewPager.setCurrentPage(pos, false);
+            horizontalItemProvider.notifyDataChanged();
         });
         imagesHorizontalList.setOrientation(Component.HORIZONTAL);
         imagesHorizontalList.setItemProvider(horizontalItemProvider);
@@ -76,7 +75,7 @@ public class ZGalleryAbility extends BaseAbility {
 
             @Override
             public void onPageChosen(int i) {
-                HiLog.debug(Constants.LABEL,"page slider in zgallery activity set to "+i);
+                HiLog.debug(Constants.LABEL,"page slider in zgallery activity set to " + i);
                 horizontalItemProvider.setSelectedItem(i);
                 imagesHorizontalList.scrollTo(i);
 

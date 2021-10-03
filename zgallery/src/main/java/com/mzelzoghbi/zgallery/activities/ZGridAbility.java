@@ -1,5 +1,6 @@
 package com.mzelzoghbi.zgallery.activities;
 
+
 import com.mzelzoghbi.zgallery.Constants;
 import com.mzelzoghbi.zgallery.ResourceTable;
 import com.mzelzoghbi.zgallery.ZGallery;
@@ -11,6 +12,9 @@ import ohos.agp.components.DirectionalLayoutManager;
 import ohos.agp.components.ListContainer;
 import ohos.hiviewdfx.HiLog;
 
+/**
+ * ZGalleryAbility
+ */
 public final class ZGridAbility extends BaseAbility implements GridClickListener {
 
     private int spanCount = 2;
@@ -22,17 +26,17 @@ public final class ZGridAbility extends BaseAbility implements GridClickListener
 
     @Override
     protected void afterInflation(Intent intent) {
-        ListContainer mRecyclerView = (ListContainer) findComponentById(ResourceTable.Id_recyclerView);
+        ListContainer recyclerGridView = (ListContainer) findComponentById(ResourceTable.Id_recyclerView);
 
         // get extra values
         int imgPlaceHolderResId = intent.getIntParam(Constants.IntentPassingParams.IMG_PLACEHOLDER, -1);
         spanCount = intent.getIntParam(Constants.IntentPassingParams.COUNT, spanCount);
         HiLog.debug(Constants.LABEL,"in zgrid activity");
-        mRecyclerView.setOrientation(Component.VERTICAL);
-        mRecyclerView.setLayoutManager(new DirectionalLayoutManager());
+        recyclerGridView.setOrientation(Component.VERTICAL);
+        recyclerGridView.setLayoutManager(new DirectionalLayoutManager());
         GridItemProvider gridItemProvider = new GridItemProvider(this, imageURLs, imgPlaceHolderResId);
         gridItemProvider.setNumColumns(2);
-        mRecyclerView.setItemProvider(gridItemProvider);
+        recyclerGridView.setItemProvider(gridItemProvider);
     }
 
 
