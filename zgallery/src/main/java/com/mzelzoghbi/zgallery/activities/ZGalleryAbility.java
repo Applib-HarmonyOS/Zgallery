@@ -6,7 +6,6 @@ import com.mzelzoghbi.zgallery.CustomViewPager;
 import com.mzelzoghbi.zgallery.ResourceTable;
 import com.mzelzoghbi.zgallery.adapters.HorizontalItemProvider;
 import com.mzelzoghbi.zgallery.adapters.NewPageSliderProvider;
-
 import ohos.aafwk.content.Intent;
 import ohos.agp.colors.RgbColor;
 import ohos.agp.components.Component;

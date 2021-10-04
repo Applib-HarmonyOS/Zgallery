@@ -6,7 +6,6 @@ import com.mzelzoghbi.zgallery.ResourceTable;
 import com.mzelzoghbi.zgallery.ZGallery;
 import com.mzelzoghbi.zgallery.adapters.GridItemProvider;
 import com.mzelzoghbi.zgallery.adapters.listeners.GridClickListener;
-
 import ohos.aafwk.content.Intent;
 import ohos.agp.components.Component;
 import ohos.agp.components.DirectionalLayoutManager;

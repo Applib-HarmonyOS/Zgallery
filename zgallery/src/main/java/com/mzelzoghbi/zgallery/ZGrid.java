@@ -4,7 +4,6 @@ import ohos.aafwk.ability.Ability;
 import ohos.aafwk.content.Intent;
 import ohos.aafwk.content.Operation;
 import ohos.hiviewdfx.HiLog;
-
 import java.io.Serializable;
 import java.util.List;
 

@@ -6,7 +6,6 @@ import com.bumptech.glide.load.engine.DiskCacheStrategy;
 import com.mzelzoghbi.zgallery.Constants;
 import com.mzelzoghbi.zgallery.ResourceTable;
 import com.mzelzoghbi.zgallery.adapters.listeners.GridClickListener;
-
 import ohos.aafwk.ability.Ability;
 import ohos.agp.components.BaseItemProvider;
 import ohos.agp.components.Component;
@@ -17,7 +16,6 @@ import ohos.agp.components.DirectionalLayout;
 import ohos.agp.components.Image;
 import ohos.agp.utils.LayoutAlignment;
 import ohos.hiviewdfx.HiLog;
-
 import java.util.ArrayList;
 
 /**

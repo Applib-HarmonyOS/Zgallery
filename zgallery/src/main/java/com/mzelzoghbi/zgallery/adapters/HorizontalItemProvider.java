@@ -4,7 +4,6 @@ import com.bumptech.glide.Glide;
 import com.mzelzoghbi.zgallery.Constants;
 import com.mzelzoghbi.zgallery.adapters.listeners.OnImgClick;
 import com.mzelzoghbi.zgallery.ResourceTable;
-
 import ohos.aafwk.ability.Ability;
 import ohos.agp.components.BaseItemProvider;
 import ohos.agp.components.Component;
@@ -12,7 +11,6 @@ import ohos.agp.components.ComponentContainer;
 import ohos.agp.components.LayoutScatter;
 import ohos.agp.components.Image;
 import ohos.hiviewdfx.HiLog;
-
 import java.util.ArrayList;
 
 /**

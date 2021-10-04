@@ -4,14 +4,12 @@ import com.mzelzoghbi.zgallery.ResourceTable;
 import com.mzelzoghbi.zgallery.SquarePhotoView;
 import com.bumptech.glide.Glide;
 import com.bumptech.glide.load.engine.DiskCacheStrategy;
-
 import ohos.aafwk.ability.Ability;
 import ohos.agp.components.LayoutScatter;
 import ohos.agp.components.Component;
 import ohos.agp.components.ComponentContainer;
 import ohos.agp.components.DependentLayout;
 import ohos.agp.components.PageSliderProvider;
-
 import java.util.ArrayList;
 
 /**

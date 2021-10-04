@@ -3,12 +3,10 @@ package com.mzelzoghbi.sample.slice;
 import com.mzelzoghbi.sample.ResourceTable;
 import com.mzelzoghbi.zgallery.ZGallery;
 import com.mzelzoghbi.zgallery.ZGrid;
-
 import ohos.aafwk.ability.AbilitySlice;
 import ohos.aafwk.content.Intent;
 import ohos.agp.components.Button;
 import ohos.agp.utils.Color;
-
 import java.util.ArrayList;
 
 /**
