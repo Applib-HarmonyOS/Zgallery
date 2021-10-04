@@ -1,6 +1,3 @@
-[![Build](https://github.com/applibgroup/ZGallery/actions/workflows/main.yml/badge.svg)](https://github.com/applibgroup/ZGallery/actions/workflows/main.yml)
-[![Quality Gate Status](https://sonarcloud.io/api/project_badges/measure?project=applibgroup_ZGallery&metric=alert_status)](https://sonarcloud.io/dashboard?id=applibgroup_ZGallery)
-
 <h1>ZGallery</h1>
 HMOS 3rd party library to make implementing galleries more easier.  (In Progress)
 
