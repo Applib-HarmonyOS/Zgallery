@@ -4,6 +4,7 @@ import ohos.aafwk.ability.Ability;
 import ohos.aafwk.content.Intent;
 import ohos.aafwk.content.Operation;
 import ohos.hiviewdfx.HiLog;
+
 import java.io.Serializable;
 import java.util.List;
 
@@ -21,9 +22,9 @@ public class ZGrid {
 
     /**
      * call ZGrid from other apps.
-     * @param ability    Reference from current activity
-     * @param imageUrls Image URLs to be displayed
      *
+     * @param ability   Reference from current activity
+     * @param imageUrls Image URLs to be displayed
      */
     public static ZGrid with(Ability ability, List<String> imageUrls) {
         return new ZGrid(ability, imageUrls);

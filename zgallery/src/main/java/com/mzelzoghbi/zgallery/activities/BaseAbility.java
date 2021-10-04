@@ -1,9 +1,11 @@
 package com.mzelzoghbi.zgallery.activities;
 
 import com.mzelzoghbi.zgallery.Constants;
+
 import ohos.aafwk.ability.Ability;
 import ohos.aafwk.content.Intent;
 import ohos.hiviewdfx.HiLog;
+
 import java.util.ArrayList;
 
 /**
