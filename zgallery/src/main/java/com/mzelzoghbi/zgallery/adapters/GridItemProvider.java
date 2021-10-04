@@ -7,7 +7,13 @@ import com.mzelzoghbi.zgallery.Constants;
 import com.mzelzoghbi.zgallery.ResourceTable;
 import com.mzelzoghbi.zgallery.adapters.listeners.GridClickListener;
 import ohos.aafwk.ability.Ability;
-import ohos.agp.components.*;
+import ohos.agp.components.BaseItemProvider;
+import ohos.agp.components.Component;
+import ohos.agp.components.ComponentContainer;
+import ohos.agp.components.LayoutScatter;
+import ohos.agp.components.DependentLayout;
+import ohos.agp.components.DirectionalLayout;
+import ohos.agp.components.Image;
 import ohos.agp.utils.LayoutAlignment;
 import ohos.hiviewdfx.HiLog;
 import java.util.ArrayList;
@@ -25,6 +31,10 @@ public class GridItemProvider extends BaseItemProvider {
 
     /**
      * GridItemProvider Constructor.
+     *
+     * @param ability             ability
+     * @param imageUrls           imageUrls
+     * @param imgPlaceHolderResId image res id
      */
     public GridItemProvider(Ability ability, ArrayList<String> imageUrls, int imgPlaceHolderResId) {
         HiLog.debug(Constants.LABEL, "in griditemprovider constructor");
@@ -36,8 +46,8 @@ public class GridItemProvider extends BaseItemProvider {
 
     /**
      * set number of columns for grid.
-     * @param numColumns number of columns
      *
+     * @param numColumns number of columns
      */
     public void setNumColumns(int numColumns) {
         this.numColumns = numColumns;
