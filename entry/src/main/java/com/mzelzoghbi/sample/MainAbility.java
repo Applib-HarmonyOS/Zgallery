@@ -5,7 +5,7 @@ import ohos.aafwk.ability.Ability;
 import ohos.aafwk.content.Intent;
 
 /**
- * MainAbility
+ * MainAbility.
  */
 public class MainAbility extends Ability {
     @Override

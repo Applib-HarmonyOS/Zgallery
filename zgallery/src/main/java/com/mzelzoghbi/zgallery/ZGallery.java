@@ -8,7 +8,7 @@ import java.io.Serializable;
 import java.util.List;
 
 /**
- * ZGallery
+ * ZGallery.
  */
 public class ZGallery {
     private final Ability mAbility;
@@ -86,10 +86,10 @@ public class ZGallery {
     }
 
     /**
-     * Start the gallery Ability with builder settings
+     * Start the gallery Ability with builder settings.
      */
     public void show() {
-        HiLog.debug(Constants.LABEL,"1st image url : " + imageUrls.get(0));
+        HiLog.debug(Constants.LABEL, "1st image url : " + imageUrls.get(0));
         Intent galleryIntent = new Intent();
         Operation systemOperation = new Intent.OperationBuilder()
                 .withAction("ability.intent.GALLERY_IMAGES")

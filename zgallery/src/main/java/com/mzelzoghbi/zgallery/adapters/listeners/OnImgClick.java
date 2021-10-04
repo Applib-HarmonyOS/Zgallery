@@ -1,7 +1,7 @@
 package com.mzelzoghbi.zgallery.adapters.listeners;
 
 /**
- * ImageClick Interface
+ * ImageClick Interface.
  */
 public interface OnImgClick {
     void onClick(int pos);

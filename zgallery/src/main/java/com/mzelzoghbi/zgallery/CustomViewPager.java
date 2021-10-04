@@ -6,7 +6,7 @@ import ohos.agp.components.PageSlider;
 import ohos.app.Context;
 
 /**
- * CustomViewPager for ZGallery
+ * CustomViewPager for ZGallery.
  */
 public class CustomViewPager extends PageSlider {
     public CustomViewPager(Context context) {

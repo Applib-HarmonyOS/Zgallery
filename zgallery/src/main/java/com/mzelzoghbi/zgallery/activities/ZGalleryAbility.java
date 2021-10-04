@@ -16,7 +16,7 @@ import ohos.agp.components.element.ShapeElement;
 import ohos.hiviewdfx.HiLog;
 
 /**
- * ZGalleryAbility
+ * ZGalleryAbility.
  */
 public class ZGalleryAbility extends BaseAbility {
 
@@ -48,13 +48,13 @@ public class ZGalleryAbility extends BaseAbility {
         mainLayout.setBackground(backgroundShape);
 
         // pager adapter
-        HiLog.debug(Constants.LABEL,"in zgallery activity");
+        HiLog.debug(Constants.LABEL, "in zgallery activity");
 
-        adapter = new NewPageSliderProvider(this, imageURLs, imagesHorizontalList);
+        adapter = new NewPageSliderProvider(this, imageUrls);
         mViewPager.setProvider(adapter);
         // horizontal list adapter
-        horizontalItemProvider = new HorizontalItemProvider(this, imageURLs, pos -> {
-            HiLog.debug(Constants.LABEL,"in zgallery activity set to " + pos);
+        horizontalItemProvider = new HorizontalItemProvider(this, imageUrls, pos -> {
+            HiLog.debug(Constants.LABEL, "in zgallery activity set to " + pos);
             mViewPager.setCurrentPage(pos, false);
             horizontalItemProvider.notifyDataChanged();
         });
@@ -75,7 +75,7 @@ public class ZGalleryAbility extends BaseAbility {
 
             @Override
             public void onPageChosen(int i) {
-                HiLog.debug(Constants.LABEL,"page slider in zgallery activity set to " + i);
+                HiLog.debug(Constants.LABEL, "page slider in zgallery activity set to " + i);
                 horizontalItemProvider.setSelectedItem(i);
                 imagesHorizontalList.scrollTo(i);
 

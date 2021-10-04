@@ -3,7 +3,7 @@ package com.mzelzoghbi.sample;
 import ohos.aafwk.ability.AbilityPackage;
 
 /**
- * MyApplication
+ * MyApplication.
  */
 public class MyApplication extends AbilityPackage {
     @Override

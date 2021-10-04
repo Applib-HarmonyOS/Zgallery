@@ -6,7 +6,7 @@ import ohos.agp.components.AttrSet;
 import ohos.app.Context;
 
 /**
- * SquarePhotoView to display photos in ZGallery
+ * SquarePhotoView to display photos in ZGallery.
  */
 public class SquarePhotoView extends PhotoView {
 

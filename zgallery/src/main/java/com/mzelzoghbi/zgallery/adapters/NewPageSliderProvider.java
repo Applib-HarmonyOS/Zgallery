@@ -1,24 +1,25 @@
 package com.mzelzoghbi.zgallery.adapters;
 
-
-import com.bumptech.glide.Glide;
-import com.bumptech.glide.load.engine.DiskCacheStrategy;
 import com.mzelzoghbi.zgallery.ResourceTable;
 import com.mzelzoghbi.zgallery.SquarePhotoView;
+import com.bumptech.glide.Glide;
+import com.bumptech.glide.load.engine.DiskCacheStrategy;
 import ohos.aafwk.ability.Ability;
 import ohos.agp.components.*;
-
 import java.util.ArrayList;
 
 /**
- * NewPageSliderProvider
+ * NewPageSliderProvider.
  */
 public class NewPageSliderProvider extends PageSliderProvider {
 
     Ability ability;
     ArrayList<String> images;
 
-    public  NewPageSliderProvider(Ability ability, ArrayList<String> images, ListContainer imagesHorizontalList) {
+    /**
+     * NewPageSliderProvider constructors.
+     */
+    public  NewPageSliderProvider(Ability ability, ArrayList<String> images) {
         this.ability = ability;
         this.images = images;
     }
@@ -50,6 +51,6 @@ public class NewPageSliderProvider extends PageSliderProvider {
 
     @Override
     public boolean isPageMatchToObject(Component component, Object o) {
-        return component == ((DependentLayout)o);
+        return component == ((DependentLayout) o);
     }
 }

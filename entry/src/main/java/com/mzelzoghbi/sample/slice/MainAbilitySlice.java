@@ -10,7 +10,7 @@ import ohos.agp.utils.Color;
 import java.util.ArrayList;
 
 /**
- * MainAbilitySlice - display 2 buttons, for ZGallery and ZGrid
+ * MainAbilitySlice - display 2 buttons, for ZGallery and ZGrid.
  */
 public class MainAbilitySlice extends AbilitySlice {
     @Override
@@ -31,7 +31,7 @@ public class MainAbilitySlice extends AbilitySlice {
     }
 
     /**
-     * ButtonClick function for ZGrid
+     * ButtonClick function for ZGrid.
      */
     public void gridActivity() {
         ZGrid.with(this.getAbility(), getDummyImageList())
@@ -44,7 +44,7 @@ public class MainAbilitySlice extends AbilitySlice {
     }
 
     /**
-     * ButtonClick function for ZGallery
+     * ButtonClick function for ZGallery.
      */
     public void galleryActivity() {
         ZGallery.with(this.getAbility(), getDummyImageList())
@@ -56,7 +56,7 @@ public class MainAbilitySlice extends AbilitySlice {
     }
 
     /**
-     * Adding dummy images which are to be displayed
+     * Adding dummy images which are to be displayed.
      */
     private ArrayList<String> getDummyImageList() {
         ArrayList<String> imagesList = new ArrayList<>();

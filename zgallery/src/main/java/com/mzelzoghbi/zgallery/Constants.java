@@ -4,7 +4,7 @@ import ohos.hiviewdfx.HiLog;
 import ohos.hiviewdfx.HiLogLabel;
 
 /**
- * Constants class
+ * Constants class.
  */
 public final class Constants {
 
@@ -14,7 +14,7 @@ public final class Constants {
     public static final HiLogLabel LABEL = new HiLogLabel(HiLog.LOG_APP, 0x00201, "MY_TAG");
 
     /**
-     * Inner Constants class
+     * Inner Constants class.
      */
     public static class IntentPassingParams {
 

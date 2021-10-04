@@ -11,7 +11,7 @@ import ohos.hiviewdfx.HiLog;
 import java.util.ArrayList;
 
 /**
- * HorizontalItemProvider
+ * HorizontalItemProvider.
  */
 public class HorizontalItemProvider extends BaseItemProvider {
 
@@ -20,6 +20,9 @@ public class HorizontalItemProvider extends BaseItemProvider {
     int selectedItem = -1;
     OnImgClick imgClick;
 
+    /**
+     * HorizontalItemProvider constructor.
+     */
     public HorizontalItemProvider(Ability ability, ArrayList<String> images, OnImgClick imgClick) {
         this.ability = ability;
         this.images = images;
@@ -77,7 +80,9 @@ public class HorizontalItemProvider extends BaseItemProvider {
     }
 
     /**
-     * Setting selected item to the imageview
+     * Setting selected item to the imageview.
+     * @param currentPos current position
+     *
      */
     public void setSelectedItem(int currentPos) {
         selectedItem = currentPos;
@@ -85,7 +90,7 @@ public class HorizontalItemProvider extends BaseItemProvider {
     }
 
     /**
-     * ImageViewHolder
+     * ImageViewHolder.
      */
     public static class ImageHolder {
         Image image;

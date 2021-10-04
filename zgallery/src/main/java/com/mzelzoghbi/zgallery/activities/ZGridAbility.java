@@ -13,7 +13,7 @@ import ohos.agp.components.ListContainer;
 import ohos.hiviewdfx.HiLog;
 
 /**
- * ZGalleryAbility
+ * ZGalleryAbility.
  */
 public final class ZGridAbility extends BaseAbility implements GridClickListener {
 
@@ -31,10 +31,10 @@ public final class ZGridAbility extends BaseAbility implements GridClickListener
         // get extra values
         int imgPlaceHolderResId = intent.getIntParam(Constants.IntentPassingParams.IMG_PLACEHOLDER, -1);
         spanCount = intent.getIntParam(Constants.IntentPassingParams.COUNT, spanCount);
-        HiLog.debug(Constants.LABEL,"in zgrid activity");
+        HiLog.debug(Constants.LABEL, "in zgrid activity");
         recyclerGridView.setOrientation(Component.VERTICAL);
         recyclerGridView.setLayoutManager(new DirectionalLayoutManager());
-        GridItemProvider gridItemProvider = new GridItemProvider(this, imageURLs, imgPlaceHolderResId);
+        GridItemProvider gridItemProvider = new GridItemProvider(this, imageUrls, imgPlaceHolderResId);
         gridItemProvider.setNumColumns(2);
         recyclerGridView.setItemProvider(gridItemProvider);
     }
@@ -42,7 +42,7 @@ public final class ZGridAbility extends BaseAbility implements GridClickListener
 
     @Override
     public void onClick(int pos) {
-        ZGallery.with(this, imageURLs)
+        ZGallery.with(this, imageUrls)
                 .setToolbarTitleColor(toolbarTitleColorId)
                 .setToolbarColorResId(toolbarColorResId)
                 .setSelectedImgPosition(pos)
