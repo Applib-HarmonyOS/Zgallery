@@ -8,7 +8,8 @@ It includes two abilities :
 a. For displaying a list of images in GridLayout.<br/>
 b. For displaying images in a PageSlider with a nice scroll HorizontalList and nice zooming gestures.
 <p>
-	<image src = "/Material%20Calendar.png" width = 320 height = 512)/>
+	<image src = "/zgrid.png" width = 320 height = 512)/>
+	<image src = "/zgallery.png" width = 320 height = 512)/>
 </p>
 
 # Source

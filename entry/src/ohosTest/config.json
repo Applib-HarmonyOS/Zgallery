@@ -1,6 +1,6 @@
 {
   "app": {
-    "bundleName": "com.github.mzelzoghbi",
+    "bundleName": "com.mzelzoghbi.sample",
     "vendor": "github",
     "version": {
       "code": 1000000,
@@ -14,10 +14,11 @@
   },
   "deviceConfig": {},
   "module": {
-    "package": "com.github.mzelzoghbi",
-    "name": "testModule",
+    "package": "com.mzelzoghbi.sample",
+    "name": "com.mzelzoghbi.sample.ExampleOhosTest",
     "deviceType": [
-      "phone"
+      "phone",
+      "tablet"
     ],
     "distro": {
       "deliveryWithInstall": true,

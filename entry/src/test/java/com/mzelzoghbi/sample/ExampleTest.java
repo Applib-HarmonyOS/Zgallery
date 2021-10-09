@@ -1,14 +1,15 @@
-package com.github.sample;
+package com.mzelzoghbi.sample;
 
 import ohos.aafwk.ability.delegation.AbilityDelegatorRegistry;
+
 import org.junit.Test;
 
 import static org.junit.Assert.assertEquals;
 
-public class ExampleOhosTest {
+public class ExampleTest {
     @Test
-    public void testBundleName() {
+    public void onStart() {
         final String actualBundleName = AbilityDelegatorRegistry.getArguments().getTestBundleName();
-        assertEquals("com.github.sample", actualBundleName);
+        assertEquals("com.mzelzoghbi.sample", actualBundleName);
     }
 }
