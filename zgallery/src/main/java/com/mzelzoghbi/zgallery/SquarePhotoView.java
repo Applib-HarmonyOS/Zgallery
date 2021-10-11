@@ -1,9 +1,13 @@
 package com.mzelzoghbi.zgallery;
 
+
 import com.github.chrisbanes.photoview.PhotoView;
 import ohos.agp.components.AttrSet;
 import ohos.app.Context;
 
+/**
+ * SquarePhotoView to display photos in ZGallery.
+ */
 public class SquarePhotoView extends PhotoView {
 
     public SquarePhotoView(Context context, AttrSet attrSet) {

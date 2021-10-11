@@ -1,42 +1,63 @@
 package com.mzelzoghbi.zgallery.adapters;
 
+
 import com.bumptech.glide.Glide;
 import com.bumptech.glide.load.engine.DiskCacheStrategy;
 import com.mzelzoghbi.zgallery.Constants;
 import com.mzelzoghbi.zgallery.ResourceTable;
 import com.mzelzoghbi.zgallery.adapters.listeners.GridClickListener;
 import ohos.aafwk.ability.Ability;
-import ohos.agp.components.*;
+import ohos.agp.components.BaseItemProvider;
+import ohos.agp.components.Component;
+import ohos.agp.components.ComponentContainer;
+import ohos.agp.components.LayoutScatter;
+import ohos.agp.components.DependentLayout;
+import ohos.agp.components.DirectionalLayout;
+import ohos.agp.components.Image;
 import ohos.agp.utils.LayoutAlignment;
 import ohos.hiviewdfx.HiLog;
-
 import java.util.ArrayList;
-import java.util.HashMap;
 
+/**
+ * GridItemProvider.
+ */
 public class GridItemProvider extends BaseItemProvider {
 
-    private ArrayList<String> imageURLs;
-    private Ability mAbility;
-    private int imgPlaceHolderResId = -1;
-    private GridClickListener clickListener;
+    private final ArrayList<String> imageUrls;
+    private final Ability ability;
+    private final int imgPlaceHolderResId;
+    private final GridClickListener clickListener;
     private int numColumns;
 
-    public GridItemProvider(Ability mAbility, ArrayList<String> imageURLs, int imgPlaceHolderResId) {
+    /**
+     * GridItemProvider Constructor.
+     *
+     * @param ability             ability
+     * @param imageUrls           imageUrls
+     * @param imgPlaceHolderResId image res id
+     */
+    public GridItemProvider(Ability ability, ArrayList<String> imageUrls, int imgPlaceHolderResId) {
         HiLog.debug(Constants.LABEL, "in griditemprovider constructor");
-        this.imageURLs = imageURLs;
-        this.mAbility = mAbility;
+        this.imageUrls = imageUrls;
+        this.ability = ability;
         this.imgPlaceHolderResId = imgPlaceHolderResId;
-        this.clickListener = (GridClickListener) mAbility;
+        this.clickListener = (GridClickListener) ability;
     }
 
+    /**
+     * set number of columns for grid.
+     *
+     * @param numColumns number of columns
+     */
     public void setNumColumns(int numColumns) {
         this.numColumns = numColumns;
     }
 
     @Override
     public int getCount() {
-        if (imageURLs != null) {
-            return imageURLs.size() % numColumns == 0 ? imageURLs.size() / numColumns : imageURLs.size() / numColumns + 1;
+        if (imageUrls != null) {
+            return imageUrls.size() % numColumns == 0
+                    ? imageUrls.size() / numColumns : imageUrls.size() / numColumns + 1;
         } else {
             return 0;
         }
@@ -46,8 +67,8 @@ public class GridItemProvider extends BaseItemProvider {
     public Object getItem(int i) {
         HiLog.debug(Constants.LABEL, "get Item " + i);
 
-        if (imageURLs != null && i >= 0 && i < imageURLs.size()) {
-            return imageURLs.get(i);
+        if (imageUrls != null && i >= 0 && i < imageUrls.size()) {
+            return imageUrls.get(i);
         }
         return null;
     }
@@ -60,17 +81,23 @@ public class GridItemProvider extends BaseItemProvider {
     @Override
     public Component getComponent(int position, Component comp, ComponentContainer componentContainer) {
         ViewHolder viewHolder;
-        Component convertComponent = new DirectionalLayout(mAbility);
-        ((DirectionalLayout) convertComponent).setOrientation(Component.HORIZONTAL);
+        DirectionalLayout convertComponent = new DirectionalLayout(ability);
+        convertComponent.setOrientation(Component.HORIZONTAL);
         ComponentContainer.LayoutConfig layoutConfig = convertComponent.getLayoutConfig();
         layoutConfig.width = DependentLayout.LayoutConfig.MATCH_PARENT;
         layoutConfig.height = DependentLayout.LayoutConfig.MATCH_CONTENT;
         convertComponent.setLayoutConfig(layoutConfig);
         for (int i = 0; i < numColumns; i++) {
-            if (position * numColumns + i < imageURLs.size()) {
-                DirectionalLayout dlItemParent = new DirectionalLayout(mAbility);
-                dlItemParent.setLayoutConfig(new DirectionalLayout.LayoutConfig(0, DirectionalLayout.LayoutConfig.MATCH_CONTENT, LayoutAlignment.TOP, 1));
-                Component childConvertComponent = LayoutScatter.getInstance(mAbility).parse(ResourceTable.Layout_z_item_image, null, false);
+            if (position * numColumns + i < imageUrls.size()) {
+                DirectionalLayout dlItemParent = new DirectionalLayout(ability);
+                dlItemParent.setLayoutConfig(new DirectionalLayout
+                        .LayoutConfig(0,
+                        DirectionalLayout.LayoutConfig.MATCH_CONTENT,
+                        LayoutAlignment.TOP,
+                        1));
+                Component childConvertComponent = LayoutScatter
+                        .getInstance(ability)
+                        .parse(ResourceTable.Layout_z_item_image, null, false);
                 int finalI = i;
                 childConvertComponent.setClickedListener(component -> {
                     if (clickListener != null) {
@@ -78,27 +105,34 @@ public class GridItemProvider extends BaseItemProvider {
                     }
                 });
                 dlItemParent.addComponent(childConvertComponent);
-                ((ComponentContainer) convertComponent).addComponent(dlItemParent);
+                convertComponent.addComponent(dlItemParent);
                 viewHolder = new ViewHolder(childConvertComponent);
                 String imageUrl = getItem(position * numColumns + i).toString();
                 HiLog.debug(Constants.LABEL, "image " + imageUrl);
-                Glide.with(mAbility).load(imageUrl)
+                Glide.with(ability).load(imageUrl)
                         .diskCacheStrategy(DiskCacheStrategy.NONE)
                         .skipMemoryCache(true)
                         .centerCrop()
-                        .placeholder(imgPlaceHolderResId != -1 ? imgPlaceHolderResId : ResourceTable.Graphic_progress)
+                        .placeholder(imgPlaceHolderResId != -1
+                                ? imgPlaceHolderResId : ResourceTable.Graphic_progress)
                         .into(viewHolder.image);
             } else {
-                DirectionalLayout childConvertComponent = new DirectionalLayout(mAbility);
-                childConvertComponent.setLayoutConfig(new DirectionalLayout.LayoutConfig(0, DirectionalLayout.LayoutConfig.MATCH_CONTENT, LayoutAlignment.TOP, 1));
-                ((ComponentContainer) convertComponent).addComponent(childConvertComponent);
+                DirectionalLayout childConvertComponent = new DirectionalLayout(ability);
+                childConvertComponent.setLayoutConfig(new DirectionalLayout
+                        .LayoutConfig(0,
+                        DirectionalLayout.LayoutConfig.MATCH_CONTENT,
+                        LayoutAlignment.TOP,
+                        1));
+                convertComponent.addComponent(childConvertComponent);
             }
         }
         return convertComponent;
     }
 
+    /**
+     * ViewHolder.
+     */
     protected static class ViewHolder {
-        HashMap<Integer, Component> mViews = new HashMap<>();
         Component itemView;
         Image image;
 
@@ -106,15 +140,5 @@ public class GridItemProvider extends BaseItemProvider {
             this.itemView = component;
             image = (Image) component.findComponentById(ResourceTable.Id_imageView);
         }
-
-        public <E extends Component> E getView(int viewId) {
-            E view = (E) mViews.get(viewId);
-            if (view == null) {
-                view = (E) itemView.findComponentById(viewId);
-                mViews.put(viewId, view);
-            }
-            return view;
-        }
-
     }
 }

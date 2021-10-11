@@ -2,14 +2,20 @@ package com.mzelzoghbi.zgallery.adapters;
 
 import com.bumptech.glide.Glide;
 import com.mzelzoghbi.zgallery.Constants;
-import com.mzelzoghbi.zgallery.OnImgClick;
+import com.mzelzoghbi.zgallery.adapters.listeners.OnImgClick;
 import com.mzelzoghbi.zgallery.ResourceTable;
 import ohos.aafwk.ability.Ability;
-import ohos.agp.components.*;
+import ohos.agp.components.BaseItemProvider;
+import ohos.agp.components.Component;
+import ohos.agp.components.ComponentContainer;
+import ohos.agp.components.LayoutScatter;
+import ohos.agp.components.Image;
 import ohos.hiviewdfx.HiLog;
-
 import java.util.ArrayList;
 
+/**
+ * HorizontalItemProvider.
+ */
 public class HorizontalItemProvider extends BaseItemProvider {
 
     ArrayList<String> images;
@@ -17,6 +23,13 @@ public class HorizontalItemProvider extends BaseItemProvider {
     int selectedItem = -1;
     OnImgClick imgClick;
 
+    /**
+     * HorizontalItemProvider constructor.
+     *
+     * @param ability  ability
+     * @param images   images
+     * @param imgClick imageClick listeners
+     */
     public HorizontalItemProvider(Ability ability, ArrayList<String> images, OnImgClick imgClick) {
         this.ability = ability;
         this.images = images;
@@ -55,9 +68,9 @@ public class HorizontalItemProvider extends BaseItemProvider {
             imageHolder = (ImageHolder) cpt.getTag();
         }
         String imageUrl = images.get(i);
-        imageHolder.image.setClickedListener(component -> {
-            imgClick.onClick(i);
-        });
+        imageHolder.image.setClickedListener(component ->
+                imgClick.onClick(i)
+        );
         Glide.with(ability)
                 .load(imageUrl)
                 .placeholder(ResourceTable.Graphic_progress)
@@ -73,11 +86,19 @@ public class HorizontalItemProvider extends BaseItemProvider {
         return cpt;
     }
 
+    /**
+     * Setting selected item to the imageview.
+     *
+     * @param currentPos current position
+     */
     public void setSelectedItem(int currentPos) {
         selectedItem = currentPos;
         notifyDataChanged();
     }
 
+    /**
+     * ImageViewHolder.
+     */
     public static class ImageHolder {
         Image image;
 
